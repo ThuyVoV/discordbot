@@ -15,11 +15,8 @@ public class Calculate extends ListenerAdapter{
 		if(msg[0].equalsIgnoreCase("!calc") && !event.getMember().getUser().isBot()){
 			if((msg.length != 4)) {
 				usage(event);
-				
 			}
 			else {
-				
-				
 				if(NumberUtils.isCreatable(msg[2]) && NumberUtils.isCreatable(msg[3])) {
 					float num1 = Integer.parseInt(msg[2]);
 					float num2 = Integer.parseInt(msg[3]);
@@ -35,18 +32,6 @@ public class Calculate extends ListenerAdapter{
 					usage(event);
 			}
 		}
-				
-				
-				
-				
-				
-				
-//				&& (msg.length < 2 || msg.length > 4)) {
-//			event.getChannel().sendMessage("!calc add/sub num1 num2").queue();
-//		}
-//		else if (msg[0].equalsIgnoreCase("!calc")){
-//			
-//		}
 	}
 	
 	public void usage(GuildMessageReceivedEvent event) {
