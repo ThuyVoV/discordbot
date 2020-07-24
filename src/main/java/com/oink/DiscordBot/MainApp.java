@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 import com.oink.DiscordBot.commands.Calculate;
+import com.oink.DiscordBot.commands.RomanNum;
 import com.oink.DiscordBot.events.helloCmd;
 import com.oink.DiscordBot.events.pm;
 
@@ -24,5 +25,6 @@ public class MainApp
         jda.addEventListener(new helloCmd());
         jda.addEventListener(new Calculate());
         jda.addEventListener(new pm());
+        jda.addEventListener(new RomanNum());
     }
 }
