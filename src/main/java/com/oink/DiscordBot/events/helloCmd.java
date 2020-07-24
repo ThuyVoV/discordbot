@@ -20,6 +20,7 @@ public class helloCmd extends ListenerAdapter{
 		}
 	}
 	
+	//replies in a whisper
 	public void sendPrivateMessage(User user, String content) {
 		
 		user.openPrivateChannel().complete().sendMessage(content).queue();
