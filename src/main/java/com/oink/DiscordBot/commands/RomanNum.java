@@ -46,17 +46,22 @@ public class RomanNum extends ListenerAdapter{
 			return (getVal(roman.charAt(0)));
 		
 		for (int i = 0; i < roman.length(); i++) {
+			
+			//add the value of the last char to the sum, then break
 			if ( i == roman.length() - 1) {
 				sum += getVal(roman.charAt(i));
 				break;
 			}
 			
+			//getting the value of the characters
 			int curNum = getVal(roman.charAt(i));
 			int nextNum = getVal(roman.charAt(i+1));
 			
+			//if any of the characters are invalid roman char, it exits
 			if (curNum == -1 || nextNum == -1)
 				return -1;
 			
+			//cases if a I followed by V (IV) means 4
 			if ( nextNum > curNum) {
 				sum += (nextNum - curNum);
 				i++;
@@ -109,7 +114,7 @@ public class RomanNum extends ListenerAdapter{
 	}
 	
 	public void usage(GuildMessageReceivedEvent event) {
-		event.getChannel().sendMessage("!roman romanNumeral").queue();
-		event.getChannel().sendMessage("example:\n!roman XXII").queue();
+		event.getChannel().sendMessage("```!roman romanNumeral```").queue();
+		event.getChannel().sendMessage("example: ```!roman XXII```").queue();
 	}
 }
