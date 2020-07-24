@@ -5,6 +5,7 @@ import java.io.FileReader;
 
 import com.oink.DiscordBot.commands.Calculate;
 import com.oink.DiscordBot.events.helloCmd;
+import com.oink.DiscordBot.events.pm;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -22,5 +23,6 @@ public class MainApp
         
         jda.addEventListener(new helloCmd());
         jda.addEventListener(new Calculate());
+        jda.addEventListener(new pm());
     }
 }
