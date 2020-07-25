@@ -3,6 +3,8 @@ package com.oink.DiscordBot;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import com.jagrosh.jdautilities.command.CommandClient;
+import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.oink.DiscordBot.commands.Calculate;
 import com.oink.DiscordBot.commands.RomanNum;
 import com.oink.DiscordBot.events.helloCmd;
@@ -19,8 +21,16 @@ public class MainApp
         String str = brTest .readLine();
         brTest.close();
 
-
         JDA jda = JDABuilder.createDefault(str).build();
+        
+        CommandClientBuilder builder = new CommandClientBuilder();
+        
+        builder.setOwnerId("90961398380625920");
+        builder.setPrefix("!");
+        builder.setHelpWord("bothelp");
+        //builder.addCommand(command);
+        
+        CommandClient client = builder.build();
         
         jda.addEventListener(new helloCmd());
         jda.addEventListener(new Calculate());

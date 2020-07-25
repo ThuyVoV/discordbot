@@ -29,6 +29,14 @@
 	</dependency>
 	
 	<dependency>
+	    <groupId>com.jagrosh</groupId>
+	    <artifactId>jda-utilities</artifactId>
+	    <version>3.0.4</version>
+	    <scope>compile</scope>
+	    <type>pom</type>
+	  </dependency>
+	
+	<dependency>
 	    <groupId>org.apache.commons</groupId>
 	    <artifactId>commons-lang3</artifactId>
 	    <version>3.9</version>
