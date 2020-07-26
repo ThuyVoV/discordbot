@@ -5,9 +5,6 @@ import org.apache.commons.lang3.math.NumberUtils;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
 //public class Calculate extends ListenerAdapter{
 //
 //	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
@@ -48,7 +45,6 @@ public class Calculate extends Command{
 
 	@Override
 	protected void execute(CommandEvent event) {
-		System.out.println("hello in here");
 		String[] msg = event.getMessage().getContentRaw().split(" ");
 				
 				
