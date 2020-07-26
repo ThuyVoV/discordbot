@@ -2,6 +2,9 @@ package com.oink.DiscordBot;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
@@ -17,17 +20,25 @@ public class MainApp
 {
     public static void main( String[] args ) throws Exception{
 
-    	BufferedReader brTest = new BufferedReader(new FileReader("stuff"));
-        String str = brTest .readLine();
-        brTest.close();
-
-        JDA jda = JDABuilder.createDefault(str).build();
+//    	BufferedReader brTest = new BufferedReader(new FileReader("stuff"));
+//        String str = brTest .readLine();
+//        brTest.close();
+    	
+    	
+        
+        List<String> list = Files.readAllLines(Paths.get("config"));
+        String token = list.get(0);
+        String ownerId = list.get(1);
+        String prefix = list.get(2);
+        
+        JDA jda = JDABuilder.createDefault(token).build();
         
         CommandClientBuilder builder = new CommandClientBuilder();
         
-        builder.setOwnerId("90961398380625920");
-        builder.setPrefix("!");
+        builder.setOwnerId(ownerId);
+        builder.setPrefix(prefix);
         builder.setHelpWord("bothelp");
+
         //builder.addCommand(command);
         
         CommandClient client = builder.build();
