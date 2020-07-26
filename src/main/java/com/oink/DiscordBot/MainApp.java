@@ -26,7 +26,7 @@ public class MainApp
     	
     	
         
-        List<String> list = Files.readAllLines(Paths.get("config"));
+        List<String> list = Files.readAllLines(Paths.get("config.txt"));
         String token = list.get(0);
         String ownerId = list.get(1);
         String prefix = list.get(2);
@@ -34,7 +34,7 @@ public class MainApp
         JDA jda = JDABuilder.createDefault(token).build();
         
         CommandClientBuilder builder = new CommandClientBuilder();
-        
+        System.out.println(prefix);
         builder.setOwnerId(ownerId);
         builder.setPrefix(prefix);
         builder.setHelpWord("bothelp");
@@ -42,9 +42,9 @@ public class MainApp
         //builder.addCommand(command);
         
         CommandClient client = builder.build();
-        
+        builder.addCommand(new Calculate());
         jda.addEventListener(new helloCmd());
-        jda.addEventListener(new Calculate());
+        //jda.addEventListener(new Calculate());
         jda.addEventListener(new pm());
         jda.addEventListener(new RomanNum());
     }

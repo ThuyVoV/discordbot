@@ -18,6 +18,16 @@ public class helloCmd extends ListenerAdapter{
 				sendPrivateMessage(event.getAuthor(), "wath up son!!");
 			}
 		}
+		
+		if(messageSent.equalsIgnoreCase("!hi")) {
+			
+			if( !event.getMember().getUser().isBot()) {
+				event.getChannel().sendMessage("hi to you").queue();
+				
+				
+			}
+		}
+		
 	}
 	
 	//replies in a whisper
