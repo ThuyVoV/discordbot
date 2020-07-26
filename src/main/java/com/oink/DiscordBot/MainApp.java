@@ -19,28 +19,24 @@ public class MainApp
     public static void main( String[] args ) throws Exception{
         
         JDA jda = JDABuilder.createDefault(Config.get("TOKEN"))
-        		.addEventListeners(new BotUpDown())
-        		.setActivity(Activity.watching("something fun"))
-        		.build();
+        	.addEventListeners(new BotUpDown())
+        	.build();
         
         CommandClientBuilder builder = new CommandClientBuilder();
-        //System.out.println(prefix);
+
         builder.setOwnerId(Config.get("OWNER_ID"));
         builder.setPrefix(Config.get("PREFIX"));
         builder.setHelpWord(Config.get("HELP_WORD"));
         
+        builder.setActivity(Activity.playing("some fun game"));
 
-        //builder.addCommand(command);
-        
         builder.addCommand(new Calculate());
         CommandClient client = builder.build();
         
 
         jda.addEventListener(client);
         
-        
         jda.addEventListener(new helloCmd());
-        //jda.addEventListener(new Calculate());
         jda.addEventListener(new pm());
         jda.addEventListener(new RomanNum());
     }
