@@ -55,6 +55,12 @@
 	    <version>5.2.1</version>
 	</dependency>
 	
+	<dependency>
+	  <groupId>me.duncte123</groupId>
+	  <artifactId>botCommons</artifactId>
+	  <version>BETA_2.0.92</version>
+	</dependency>
+	
   </dependencies>
 
 	<repositories>
