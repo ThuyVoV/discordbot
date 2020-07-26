@@ -4,10 +4,7 @@ import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.oink.DiscordBot.commands.Calculate;
 import com.oink.DiscordBot.commands.RomanNum;
-import com.oink.DiscordBot.events.BotUpDown;
 import com.oink.DiscordBot.events.helloCmd;
-import com.oink.DiscordBot.events.pm;
-
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -37,7 +34,6 @@ public class MainApp
         jda.addEventListener(client);
         
         jda.addEventListener(new helloCmd());
-        jda.addEventListener(new pm());
         jda.addEventListener(new RomanNum());
     }
 }

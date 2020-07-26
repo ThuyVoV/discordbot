@@ -1,9 +1,7 @@
-package com.oink.DiscordBot.events;
+package com.oink.DiscordBot;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.oink.DiscordBot.Config;
 
 import me.duncte123.botcommons.BotCommons;
 import net.dv8tion.jda.api.events.ReadyEvent;
