@@ -22,20 +22,20 @@ public class MainApp
 	
     public static void main( String[] args ) throws Exception{
 
-        List<String> list = Files.readAllLines(Paths.get("config.txt"));
-        String token = list.get(0);
-        String ownerId = list.get(1);
-        String prefix = list.get(2);
+//        List<String> list = Files.readAllLines(Paths.get("config.txt"));
+//        String token = list.get(0);
+//        String ownerId = list.get(1);
+//        String prefix = list.get(2);
         
-        JDA jda = JDABuilder.createDefault(token)
+        JDA jda = JDABuilder.createDefault(Config.get("TOKEN"))
         		.addEventListeners(new BotReady())
         		.setActivity(Activity.watching("something fun"))
         		.build();
         
         CommandClientBuilder builder = new CommandClientBuilder();
         //System.out.println(prefix);
-        builder.setOwnerId(ownerId);
-        builder.setPrefix(prefix);
+        builder.setOwnerId(Config.get("OWNDER_ID"));
+        builder.setPrefix(Config.get("PREFIX"));
         builder.setHelpWord("bothelp");
         
 
