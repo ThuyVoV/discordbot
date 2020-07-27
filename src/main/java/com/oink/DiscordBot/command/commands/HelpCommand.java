@@ -35,6 +35,8 @@ public class HelpCommand implements CommandInterface{
 			return;
 		}
 		
+		//gets the word after "help"
+		//ie. "!help command" -> search=command
 		String search = args.get(0);
 		CommandInterface command = manager.getCommand(search);
 		
@@ -48,13 +50,11 @@ public class HelpCommand implements CommandInterface{
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return "help";
 	}
 
 	@Override
 	public String getHelp() {
-		// TODO Auto-generated method stub
 		return "Shows the list of all the commands for the bot\n"
 				+ "Usage: `" + Config.get("PREFIX") + "help [command]`";
 	}

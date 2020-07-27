@@ -9,13 +9,18 @@ public class helloCmd extends ListenerAdapter{
 	@Override
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
 		String messageSent = event.getMessage().getContentRaw();
-		
+
 		if(messageSent.equalsIgnoreCase("!whisper")) {
 			
 			if( !event.getMember().getUser().isBot()) {
 				event.getChannel().sendMessage("what's up sending msg now").queue();
 				
 				sendPrivateMessage(event.getAuthor(), "wath up son!!");
+
+
+				System.out.println(event.getMember());
+				System.out.println(event.getAuthor());
+//				sendPrivateMessage(, "by thingy");
 			}
 		}
 		
@@ -23,8 +28,6 @@ public class helloCmd extends ListenerAdapter{
 			
 			if( !event.getMember().getUser().isBot()) {
 				event.getChannel().sendMessage("hi to you").queue();
-				
-				
 			}
 		}
 		

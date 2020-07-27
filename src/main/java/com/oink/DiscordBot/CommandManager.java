@@ -10,6 +10,7 @@ import javax.annotation.Nullable;
 import com.oink.DiscordBot.command.CommandContext;
 import com.oink.DiscordBot.command.CommandInterface;
 import com.oink.DiscordBot.command.commands.HelpCommand;
+import com.oink.DiscordBot.command.commands.MsgSomeoneCommand;
 import com.oink.DiscordBot.command.commands.PingCommand;
 
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -20,6 +21,7 @@ public class CommandManager {
 	public CommandManager() {
 		addCommand(new PingCommand());
 		addCommand(new HelpCommand(this));
+		addCommand(new MsgSomeoneCommand());
 	}
 	
 	//if command already exists do not add, else add it
