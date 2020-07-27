@@ -5,7 +5,7 @@ import com.oink.DiscordBot.command.CommandInterface;
 
 import net.dv8tion.jda.api.JDA;
 
-public class Ping implements CommandInterface{
+public class PingCommand implements CommandInterface{
 
 	@Override
 	public void handle(CommandContext context) {
@@ -20,6 +20,11 @@ public class Ping implements CommandInterface{
 	@Override
 	public String getName() {
 		return "ping";
+	}
+
+	@Override
+	public String getHelp() {
+		return "Shows the current ping of the bot to the discord server";
 	}
 	
 }

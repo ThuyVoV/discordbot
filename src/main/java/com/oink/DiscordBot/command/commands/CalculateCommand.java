@@ -7,9 +7,9 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 import com.oink.DiscordBot.Config;
 
 
-public class Calculate extends Command{
+public class CalculateCommand extends Command{
 
-	public Calculate() {
+	public CalculateCommand() {
 		this.name = "calc";
 		this.aliases = new String[] {"calculate"};
 		this.help = "given 2 numbers you add or subtract them";

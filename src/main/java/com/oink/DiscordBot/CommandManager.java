@@ -9,7 +9,8 @@ import javax.annotation.Nullable;
 
 import com.oink.DiscordBot.command.CommandContext;
 import com.oink.DiscordBot.command.CommandInterface;
-import com.oink.DiscordBot.command.commands.Ping;
+import com.oink.DiscordBot.command.commands.HelpCommand;
+import com.oink.DiscordBot.command.commands.PingCommand;
 
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -17,7 +18,8 @@ public class CommandManager {
 	private final List<CommandInterface> commands = new ArrayList<CommandInterface>();
 	
 	public CommandManager() {
-		addCommand(new Ping());
+		addCommand(new PingCommand());
+		addCommand(new HelpCommand(this));
 	}
 	
 	//if command already exists do not add, else add it
@@ -33,9 +35,13 @@ public class CommandManager {
 		commands.add(cmd);
 	}
 	
+	public List<CommandInterface> getCommands(){
+		return commands;
+	}
+	
 	//allows us to return null
 	@Nullable
-	private CommandInterface getCommand(String search) {
+	public CommandInterface getCommand(String search) {
 		String searchLower = search.toLowerCase();
 		
 		//checks for the command we inputed

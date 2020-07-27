@@ -2,8 +2,8 @@ package com.oink.DiscordBot;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
-import com.oink.DiscordBot.command.commands.Calculate;
-import com.oink.DiscordBot.command.commands.RomanNum;
+import com.oink.DiscordBot.command.commands.CalculateCommand;
+import com.oink.DiscordBot.command.commands.RomanCommand;
 import com.oink.DiscordBot.event.events.helloCmd;
 
 import net.dv8tion.jda.api.JDA;
@@ -28,13 +28,13 @@ public class MainApp
         
         builder.setActivity(Activity.playing("some fun game"));
 
-        builder.addCommand(new Calculate());
+        builder.addCommand(new CalculateCommand());
         CommandClient client = builder.build();
         
 
         jda.addEventListener(client);
         
         jda.addEventListener(new helloCmd());
-        jda.addEventListener(new RomanNum());
+        jda.addEventListener(new RomanCommand());
     }
 }
