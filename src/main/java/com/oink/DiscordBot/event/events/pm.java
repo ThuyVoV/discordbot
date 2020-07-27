@@ -1,4 +1,4 @@
-package com.oink.DiscordBot.events;
+package com.oink.DiscordBot.event.events;
 
 import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

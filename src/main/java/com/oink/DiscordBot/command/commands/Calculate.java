@@ -1,4 +1,4 @@
-package com.oink.DiscordBot.commands;
+package com.oink.DiscordBot.command.commands;
 
 import org.apache.commons.lang3.math.NumberUtils;
 

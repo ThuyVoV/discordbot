@@ -1,4 +1,4 @@
-package com.oink.DiscordBot.commands;
+package com.oink.DiscordBot.command.commands;
 
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
