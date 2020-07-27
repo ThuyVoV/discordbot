@@ -11,7 +11,7 @@ public class pm extends ListenerAdapter{
 		
 		//get the name of the person who send tht message
 		String name = e.getAuthor().getName();
-
+		
 		//if it is a user and not a bot, do this action
 		if( !e.getAuthor().isBot())
 			e.getChannel().sendMessage("hello friend " + name + ", you said " + sentMsg + " to me!").queue();

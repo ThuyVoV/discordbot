@@ -19,9 +19,11 @@ public class HelpCommand implements CommandInterface{
 
 	@Override
 	public void handle(CommandContext context) {
+		//args is everything after the "commandWord" in this case "help"
 		List<String> args = context.getList();
 		TextChannel channel = context.getChannel();
 		
+		//if no argument display all the commands
 		if(args.isEmpty()) {
 			StringBuilder builder = new StringBuilder();
 			builder.append("List of commands\n");
@@ -34,17 +36,18 @@ public class HelpCommand implements CommandInterface{
 			
 			return;
 		}
+
 		
-		//gets the word after "help"
-		//ie. "!help command" -> search=command
 		String search = args.get(0);
 		CommandInterface command = manager.getCommand(search);
 		
+		//if there is no command that matches display nothing found
 		if(command == null) {
 			channel.sendMessage("Nothing found for " + search).queue();
 			return;
 		}
 		
+		//if there is an argument display that help message for that command
 		channel.sendMessage(command.getHelp()).queue();
 	}
 

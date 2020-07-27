@@ -4,15 +4,14 @@ import com.oink.DiscordBot.command.CommandContext;
 import com.oink.DiscordBot.command.CommandInterface;
 
 import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 public class MsgSomeoneCommand implements CommandInterface{
 
 	@Override
 	public void handle(CommandContext context) {
-		String str = context.getEvent().getMessage().getContentRaw();
+		String toSend = context.getEvent().getMessage().getContentRaw();
 		
-		
+		context.getChannel().sendMessage("yeah ok nerd, " + toSend).queue();
 		
 	}
 

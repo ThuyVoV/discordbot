@@ -26,7 +26,7 @@ public class MainApp
         builder.setPrefix(Config.get("PREFIX"));
         builder.setHelpWord(Config.get("HELP_WORD"));
         
-        builder.setActivity(Activity.playing("some fun game"));
+        builder.setActivity(Activity.playing("OINK OINK GOTTA CODE!!"));
 
         builder.addCommand(new CalculateCommand());
         CommandClient client = builder.build();
