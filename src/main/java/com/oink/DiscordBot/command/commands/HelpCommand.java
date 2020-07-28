@@ -20,7 +20,7 @@ public class HelpCommand implements CommandInterface{
 	@Override
 	public void handle(CommandContext context) {
 		//args is everything after the "commandWord" in this case "help"
-		List<String> args = context.getList();
+		List<String> args = context.getArgs();
 		TextChannel channel = context.getChannel();
 		
 		//if no argument display all the commands
