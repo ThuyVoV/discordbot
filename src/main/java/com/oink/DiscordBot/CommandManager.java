@@ -18,6 +18,7 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 public class CommandManager {
 	private final List<CommandInterface> commands = new ArrayList<CommandInterface>();
 	
+	//adding my commands
 	public CommandManager() {
 		addCommand(new PingCommand());
 		addCommand(new HelpCommand(this));
@@ -26,6 +27,8 @@ public class CommandManager {
 	
 	//if command already exists do not add, else add it
 	private void addCommand(CommandInterface cmd) {
+		
+		//iterates through the commands list, check to see if the command matches
 		boolean nameFound = this.commands.stream().anyMatch(
 				(it) -> it.getName().equalsIgnoreCase(cmd.getName()));
 		
@@ -46,7 +49,7 @@ public class CommandManager {
 	public CommandInterface getCommand(String search) {
 		String searchLower = search.toLowerCase();
 		
-		//checks for the command we inputed
+		//checks for the command we inputted
 		for (CommandInterface cmd : this.commands) {
 			if(cmd.getName().equals(searchLower) || cmd.getAliases().contains(searchLower))
 				return cmd;

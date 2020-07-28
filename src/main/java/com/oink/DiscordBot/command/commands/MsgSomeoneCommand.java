@@ -11,7 +11,7 @@ public class MsgSomeoneCommand implements CommandInterface{
 	public void handle(CommandContext context) {
 		String toSend = context.getEvent().getMessage().getContentRaw();
 		
-		context.getChannel().sendMessage("yeah ok nerd, " + toSend).queue();
+		context.getChannel().sendMessage("this is your message: " + toSend).queue();
 		
 	}
 
@@ -22,7 +22,7 @@ public class MsgSomeoneCommand implements CommandInterface{
 
 	@Override
 	public String getHelp() {
-		return "to troll darky";
+		return "DM someone";
 	}
 
 }
