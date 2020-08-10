@@ -3,6 +3,7 @@ package com.oink.DiscordBot;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.oink.DiscordBot.command.commands.CalculateCommand;
+import com.oink.DiscordBot.command.commands.DotaCommand;
 import com.oink.DiscordBot.command.commands.RomanCommand;
 import com.oink.DiscordBot.event.events.helloCmd;
 
@@ -29,6 +30,7 @@ public class MainApp
         builder.setActivity(Activity.playing("OINK OINK GOTTA CODE!!"));
 
         builder.addCommand(new CalculateCommand());
+        builder.addCommand(new DotaCommand());
         CommandClient client = builder.build();
         
 
